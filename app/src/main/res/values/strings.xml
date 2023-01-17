@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">Big Bang Theory - Quiz</string>
-    <string name="question_text">Sheldon’s roommate’s name is Leonard?</string>
     <string name="true_button">True</string>
     <string name="false_button">False</string>
     <string name="correct_toast">Correct!</string>
     <string name="incorrect_toast">Incorrect!</string>
+    <string name="question_roommate">Sheldon’s roommate’s name is Leonard?</string>
+    <string name="next_button">Next</string>
 </resources>
