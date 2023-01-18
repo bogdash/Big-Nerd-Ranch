@@ -12,4 +12,5 @@
     <string name="question_howard_doctorate" >Howard has a doctorate?</string>
     <string name="question_comic_books" >Do the main characters like comic books?</string>
     <string name="next_button">Next</string>
+    <string name="prev_button">Prev</string>
 </resources>
