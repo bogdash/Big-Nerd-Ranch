@@ -40,6 +40,11 @@ class MainActivity : AppCompatActivity() {
             checkAnswer(false)
         }
 
+        questionTextView.setOnClickListener {
+            currentIndex = (currentIndex + 1) % questionBank.size
+            updateQuestion()
+        }
+
         nextButton.setOnClickListener {
             currentIndex = (currentIndex + 1) % questionBank.size
             updateQuestion()
