@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
+import kotlin.math.roundToInt
 
 class MainActivity : AppCompatActivity() {
 
@@ -47,20 +48,20 @@ class MainActivity : AppCompatActivity() {
 
         questionTextView.setOnClickListener {
             currentIndex = (currentIndex + 1) % questionBank.size
-            isAnswered()
             updateQuestion()
+            isAnswered()
         }
 
         prevButton.setOnClickListener {
             currentIndex = (currentIndex - 1 + questionBank.size) % questionBank.size
-            isAnswered()
             updateQuestion()
+            isAnswered()
         }
 
         nextButton.setOnClickListener {
             currentIndex = (currentIndex + 1) % questionBank.size
-            isAnswered()
             updateQuestion()
+            isAnswered()
         }
         updateQuestion()
     }
@@ -75,8 +76,10 @@ class MainActivity : AppCompatActivity() {
         questionBank[currentIndex].isAnswered = true
 
         val messageResId = if (userAnswer == correctAnswer) {
+            questionBank[currentIndex].userAnswer = true
             R.string.correct_toast
         } else {
+            questionBank[currentIndex].userAnswer = false
             R.string.incorrect_toast
         }
         Toast.makeText(this, messageResId, Toast.LENGTH_SHORT).show()
@@ -91,6 +94,15 @@ class MainActivity : AppCompatActivity() {
         } else {
             falseButton.isEnabled = true
             trueButton.isEnabled = true
+        }
+
+        if (questionBank.all { it.isAnswered }) {
+            val rightAnswers = questionBank.filter { it.userAnswer == true }
+            val accuracy: Double = ((rightAnswers.size).toDouble() / (questionBank.size.toDouble())) * 100.0
+            val resultAccuracy = accuracy.toInt()
+
+
+            questionTextView.text = getString(R.string.rightAnswers, resultAccuracy)
         }
     }
 }
