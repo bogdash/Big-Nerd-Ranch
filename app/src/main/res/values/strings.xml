@@ -13,5 +13,5 @@
     <string name="question_comic_books" >Do the main characters like comic books?</string>
     <string name="next_button">Next</string>
     <string name="prev_button">Previous</string>
-    <string name="rightAnswers">Процент правильных ответов: %1$d </string>
+    <string name="rightAnswers">Процент правильных ответов:</string>
 </resources>
