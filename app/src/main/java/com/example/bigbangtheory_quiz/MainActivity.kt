@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var nextButton: ImageButton
     private lateinit var questionTextView: TextView
     private lateinit var prevButton: ImageButton
+    private lateinit var cheatButton: Button
 
     private val quizViewModel: QuizViewModel by lazy {
         ViewModelProviders.of(this)[QuizViewModel::class.java]
@@ -36,6 +37,7 @@ class MainActivity : AppCompatActivity() {
         nextButton = findViewById(R.id.next_button)
         prevButton = findViewById(R.id.prev_button)
         questionTextView =  findViewById(R.id.question_text_View)
+        cheatButton = findViewById(R.id.cheat_button)
 
         trueButton.setOnClickListener {
             questionTextView.text = quizViewModel.checkAnswer(true)
@@ -55,6 +57,10 @@ class MainActivity : AppCompatActivity() {
         nextButton.setOnClickListener {
             questionTextView.text = quizViewModel.moveToNext()
             isAnswerButtonsTappable()
+        }
+
+        cheatButton.setOnClickListener {
+            //Начало CheatActivity
         }
 
         questionTextView.text = quizViewModel.getString(quizViewModel.currentQuestion.textResId)
