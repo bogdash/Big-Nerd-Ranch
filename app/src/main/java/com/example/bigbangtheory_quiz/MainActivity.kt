@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         cheatButton.setOnClickListener {
-            val answerIsTrue = quizViewModel.currentQuestionAnswer//in QuizViewModel deleted
+            val answerIsTrue = quizViewModel.currentQuestionAnswer
             val intent = CheatActivity.newIntent(this@MainActivity, answerIsTrue)
 
             startActivityForResult(intent, REQUEST_CODE_CHEAT)
@@ -81,8 +81,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         if (requestCode == REQUEST_CODE_CHEAT) {
-            quizViewModel.isCheater =
+            quizViewModel.currentQuestion.answerCheated =
                 data?.getBooleanExtra(EXTRA_ANSWER_SHOW, false) ?: false
+            isAnswerButtonsTappable()
         }
     }
     override fun onSaveInstanceState(savedInstanceState: Bundle) {

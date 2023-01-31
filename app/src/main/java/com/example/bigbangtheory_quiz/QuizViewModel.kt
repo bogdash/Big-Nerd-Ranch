@@ -8,7 +8,6 @@ import androidx.lifecycle.ViewModel
 class QuizViewModel : ViewModel() {
 
     var currentIndex = 0
-    var isCheater = false
     @SuppressLint("StaticFieldLeak")
     var context: Context? = null
 
@@ -39,7 +38,7 @@ class QuizViewModel : ViewModel() {
     }
 
     fun checkAnswer(answer: Boolean): String {
-        if(isCheater) {
+        if(currentQuestion.answerCheated) {
             Toast.makeText(context, R.string.judgment_toast, Toast.LENGTH_SHORT).show()
         } else if (answer == currentQuestion.answer) {
             currentQuestion.userAnswer = true
