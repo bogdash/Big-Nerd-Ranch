@@ -21,6 +21,9 @@ class QuizViewModel : ViewModel() {
         Question(R.string.question_comic_books, true)
     )
 
+    val currentQuestionAnswer: Boolean
+        get() = questionBank[currentIndex].answer
+
     val currentQuestion: Question
         get() = questionBank[currentIndex]
 
@@ -35,14 +38,15 @@ class QuizViewModel : ViewModel() {
     }
 
     fun checkAnswer(answer: Boolean): String {
-         if (answer == currentQuestion.answer) {
-             currentQuestion.userAnswer = true
-             Toast.makeText(context, R.string.correct_toast, Toast.LENGTH_SHORT).show()
-         } else {
-             currentQuestion.userAnswer = false
-             Toast.makeText(context, R.string.incorrect_toast, Toast.LENGTH_SHORT).show()
-         }
-
+        if(currentQuestion.answerCheated) {
+            Toast.makeText(context, R.string.judgment_toast, Toast.LENGTH_SHORT).show()
+        } else if (answer == currentQuestion.answer) {
+            currentQuestion.userAnswer = true
+            Toast.makeText(context, R.string.correct_toast, Toast.LENGTH_SHORT).show()
+        } else {
+            currentQuestion.userAnswer = false
+            Toast.makeText(context, R.string.incorrect_toast, Toast.LENGTH_SHORT).show()
+        }
         currentQuestion.isAnswered = true
 
         return quizText()

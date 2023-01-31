@@ -5,13 +5,17 @@
     <string name="correct_toast">Correct!</string>
     <string name="incorrect_toast">Incorrect!</string>
     <string name="question_roommate">Sheldon’s roommate’s name is Leonard?</string>
-    <string name="question_girlfriend" >Sheldon’s girlfriend’s name is Penny?</string>
-    <string name="question_rajesh_mom" >Rajesh lives with his mom?</string>
-    <string name="question_rajesh_mutism" >Rajesh can’t talk to men because of selective mutism?</string>
-    <string name="question_emmy_neuroscientist" >Emmy is a neuroscientist?</string>
-    <string name="question_howard_doctorate" >Howard has a doctorate?</string>
-    <string name="question_comic_books" >Do the main characters like comic books?</string>
+    <string name="question_girlfriend">Sheldon’s girlfriend’s name is Penny?</string>
+    <string name="question_rajesh_mom">Rajesh lives with his mom?</string>
+    <string name="question_rajesh_mutism">Rajesh can’t talk to men because of selective mutism?</string>
+    <string name="question_emmy_neuroscientist">Emmy is a neuroscientist?</string>
+    <string name="question_howard_doctorate">Howard has a doctorate?</string>
+    <string name="question_comic_books">Do the main characters like comic books?</string>
     <string name="next_button">Next</string>
     <string name="prev_button">Previous</string>
-    <string name="rightAnswers">Процент правильных ответов:</string>
+    <string name="rightAnswers">Percentage of correct answers:</string>
+    <string name="warning_text">Are you sure you want to do this?</string>
+    <string name="show_answer_button">Show answer</string>
+    <string name="cheat_button">Cheat!</string>
+    <string name="judgment_toast">Cheating is wrong.</string>
 </resources>
