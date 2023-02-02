@@ -109,6 +109,10 @@ class MainActivity : AppCompatActivity() {
             falseButton.isEnabled = true
             trueButton.isEnabled = true
         }
+
+        if (quizViewModel.isCheateredEnough) {
+            cheatButton.isEnabled = false
+        }
     }
 
 }
