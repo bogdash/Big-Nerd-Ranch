@@ -27,6 +27,9 @@ class QuizViewModel : ViewModel() {
     val currentQuestion: Question
         get() = questionBank[currentIndex]
 
+    val isCheateredEnough: Boolean
+        get() = questionBank.filter { it.answerCheated }.size >= 3
+
     fun moveToNext(): String {
         currentIndex = (currentIndex + 1) % questionBank.size
         return quizText()
